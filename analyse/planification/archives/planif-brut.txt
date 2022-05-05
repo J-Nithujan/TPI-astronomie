@@ -1,0 +1,44 @@
+Features:
+---------------
+1. Acceuil et connexion
+2. Liste des objets astronomiques
+3. Sorties nocturnes
+4. Mise en ligne du site
+
+Tasks:
+----------
+1. 
+- modélisation de la base de données (MCD/MLD complet)
+- création partielle de la base de données (avec fichier CSV)
+- modélisation de la page acceuil
+- création de la page Acceuil
+    - connexion au site via un compte admin
+- Tests
+- documentation
+
+2. 
+- modélisation de la page avec la liste des objets atronomiques
+- extraction des images en local
+- ajout des données manquantes dans la bdd
+- création de la page contenant la liste des objets de Messier
+    - lecture et utilisation des données: CSV et images
+    - gestion des critères de recherche et du tri des résultats
+- Tests
+- documentation
+
+3.
+- modélisation de la page des sorties nocturnes
+    - liste des sorties
+    - création d'une nouvelle sorties
+    - formulaire d'inscription à une sortie
+- création de la page des sorties nocturnes
+    - liste complète des sorties nocturnes
+    - création de nouvelles sorties nocturnes
+    - inscription à une sortie nocturne
+- Tests
+- documentation
+
+4. 
+- mise en ligne du site et de la bdd sur Heroku
+- tests
+- documentation
