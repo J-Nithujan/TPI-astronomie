@@ -14,18 +14,17 @@ def index():
     return render_template('index.html', title='Accueil')
 
 
-@app.route('/login', methods=['POST', 'GET'])
+@app.route('/login/', methods=['POST', 'GET'])
 def login():
     form = LoginForm()
-    if form.is_submitted():
-        if check_login(form.email.data, form.password.data):
+    if form.validate_on_submit():
+        if check_login(form):
             # login success
             session['email'] = form.email.data
             return redirect(url_for('index'))
         else:
             # login failed
-            error_msg = 'Identifiants incorrects'
-            return render_template('login.html', title='Login', form=form, errors=error_msg)
+            return render_template('login.html', title='Login', form=form)
     else:
         # access by menu
         return render_template('login.html', title='Login', form=form)
