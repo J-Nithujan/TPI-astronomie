@@ -3,8 +3,8 @@
 */
 
 body{
-    color: #99AABF;
-    background-color: #031626;
+    color: #A7F2B2;
+    background-color: #000000;
 }
 
 footer{
@@ -15,10 +15,14 @@ header, footer{
     background-color: #0D0D0D;
 }
 
+#logo {
+    width: 40px;
+}
+
 #page-title{
-    background-image: url("../img/index-title-background.jpg");
-    /* source: https://www.pexels.com/fr-fr/photo/groupe-d-etoiles-1341279/ */
-    background-size: auto;
+    background-image: url("../assets/index-title-background.jpg");
+    /* source: https://www.pexels.com/fr-fr/photo/ciel-etoile-998641/ */
+    background-size: cover;
 }
 
 
@@ -30,11 +34,11 @@ header, footer{
 .fs-4::after {
     content: "";
     display: block;
-    margin-left: 45%;
+    width: 2%;
+    margin-left: 49%;
     margin-top: 3px;
-    width: 10%;
     height: 2px;
-    background: #2E2259;
+    background: #5D3CA6;
 }
 
 #contact{
@@ -43,4 +47,9 @@ header, footer{
 
 .fa-brands{
     color: #232CD9;
+}
+
+.user-input, .user-input:focus {
+    background-color: #0D0D0D;
+    color: #99AABF;
 }

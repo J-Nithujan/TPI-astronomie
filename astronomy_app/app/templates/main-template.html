@@ -19,11 +19,11 @@
 <!-- header -->
 <header class="row ms-auto me-auto">
     <div class="col-lg-4 d-flex">
-        <img src="" alt="logo">
+        <img id="logo" src="{{ url_for('static', filename='assets/website-logo.jpg') }}" alt="logo">
         <div class="fs-3">Astronomie</div>
     </div>
     <div class="col-lg-4">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -32,49 +32,50 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 te">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Acceuil</a>
+                        <a class="nav-link fs-5" href="{{ url_for('index') }}">Acceuil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('catalog') }}">Catalogue Messier</a>
+                        <a class="nav-link fs-5" href="{{ url_for('catalog') }}">Catalogue Messier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('outings') }}">Sorties</a>
+                        <a class="nav-link fs-5" href="{{ url_for('outings') }}">Sorties</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </div>
-    <div class="col-lg-4 d-flex justify-content-end">
-        <a class="text-uppercase text-decoration-none " href="{{ url_for('login') }}">Login</a>
+    <div class="col-lg-4 d-flex justify-content-end mt-auto mb-auto">
+        <a class="text-uppercase text-decoration-none" href="{{ url_for('login') }}">Login</a>
     </div>
 </header>
 
 <!-- page name -->
 <div class="row pt-5 pb-5" id="page-title">
-    <!-- set an image for background -->
-    {# <div class="col-md-12">{{ self.title() }}</div> #}
-    <div class="col-md-12 fs-1 text-center">Accueil</div>
+     <div class="col-md-12 fs-1 text-center fst-italic">{{ self.title() }}</div>
 </div>
 
 
 <!-- breadcrumb menu -->
-<div class="row d-flex border-bottom border-top ms-auto pt-2" id="breadcrumb-div">
+<div class="row d-flex border-bottom border-2 ms-auto pt-2" id="breadcrumb-div">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item active" aria-current="page">Accueil</li>
+             {% block breadcrumb_items %} {% endblock %}
         </ol>
     </nav>
 </div>
 
-<!-- content use block after-->
-{% block content %}{% endblock content %}
+<!-- content -->
+<div class="container" id="content">
+    {% block content %}
+    {% endblock content %}
+</div>
 
 <!-- footer-->
-<footer class="row mt-5 justify-content-center">
+<footer class="row mt-5 pt-3 ms-auto me-auto border-top border-2 justify-content-center">
     <div class="col-md-6">
         <div class="fs-5">Contact</div>
         <div id="contact" class="p-0 mt-3">
-            Email: lastname.firstname@email.com
+            Email: contact@info.com
         </div>
     </div>
     <div class="col-md-6">
