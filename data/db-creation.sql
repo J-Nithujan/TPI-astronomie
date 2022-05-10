@@ -2,17 +2,6 @@
 -- Please log an issue at https://redmine.postgresql.org/projects/pgadmin4/issues/new if you find any bugs, including reproduction steps.
 BEGIN;
 
-DROP TABLE IF EXISTS public.outing_has_celestial_object;
-DROP TABLE IF EXISTS public.user_has_outing;
-DROP TABLE IF EXISTS public.celestial_objects;
-DROP TABLE IF EXISTS public.users;
-DROP TABLE IF EXISTS public.outings;
-DROP TABLE IF EXISTS public.administrators;
-DROP TABLE IF EXISTS public.observation_difficulties;
-DROP TABLE IF EXISTS public.types;
-DROP TABLE IF EXISTS public.seasons;
-DROP TABLE IF EXISTS public.constellations;
-
 
 CREATE TABLE IF NOT EXISTS public.types
 (
@@ -88,6 +77,7 @@ CREATE TABLE IF NOT EXISTS public.celestial_objects
     messier_number character varying(4) NOT NULL,
     ngc_number character varying(10),
     right_ascension time(0) without time zone,
+	declination character varying(7),
     apparent_magnitude numeric(4, 2),
     size character varying(15),
     distance character varying(10),
