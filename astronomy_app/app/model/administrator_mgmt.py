@@ -14,16 +14,15 @@ def check_login(form: LoginForm):
     try:
         admin: Administrators = Administrators.query.filter_by(email=form.email.data).first()
         if admin:
-            if admin.password is hashed:
+            if admin.password == hashed:
                 return True
             else:
-                form.password.errors.append('Mot de passe incorrects')
+                form.password.errors.append('Mot de passe incorrect')
         else:
             form.login.errors.append('Utilisateur inexistant')
             return False
 
     except OperationalError:
         form.login.errors.append('Erreur avec la base de données')
-    finally:
         return False
 

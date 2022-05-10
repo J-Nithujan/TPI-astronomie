@@ -40,18 +40,27 @@
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="{{ url_for('outings') }}">Sorties</a>
                     </li>
+                    {% if user %}
+                        <li class="nav-item">
+                            <a class="nav-link fs-5" href="{{ url_for('edit_outings') }}">Admin</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
     </div>
     <div class="col-lg-4 d-flex justify-content-end mt-auto mb-auto">
-        <a class="text-uppercase text-decoration-none" href="{{ url_for('login') }}">Login</a>
+        {% if user %}
+            <a class="text-uppercase text-decoration-none" href="{{ url_for('logout') }}">Logout</a>
+        {% else %}
+            <a class="text-uppercase text-decoration-none" href="{{ url_for('login') }}">Login</a>
+        {% endif %}
     </div>
 </header>
 
 <!-- page name -->
 <div class="row pt-5 pb-5" id="page-title">
-     <div class="col-md-12 fs-1 text-center fst-italic">{{ self.title() }}</div>
+    <div class="col-md-12 fs-1 text-center fst-italic">{{ self.title() }}</div>
 </div>
 
 
@@ -59,7 +68,7 @@
 <div class="row d-flex border-bottom border-2 ms-auto pt-2" id="breadcrumb-div">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-             {% block breadcrumb_items %} {% endblock %}
+            {% block breadcrumb_items %} {% endblock %}
         </ol>
     </nav>
 </div>

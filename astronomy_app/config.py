@@ -1,10 +1,9 @@
 # Version: 05.05.22
 
-import random
-import string
+import secrets
 
 # Generate a random key for session
-SECRET_KEY = ''.join([random.choice(string.printable) for _ in range(24)])
+SECRET_KEY = secrets.token_hex()
 
 # Had to be set to 'True' or 'False' to suppress error message due to future disabling
 SQLALCHEMY_TRACK_MODIFICATIONS = True
