@@ -1,0 +1,5 @@
+- tests dans icescrum
+
+- chemin des images pour objets célestes
+
+- rédaction des rés. des tests dans doss.
