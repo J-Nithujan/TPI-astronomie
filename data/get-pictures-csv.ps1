@@ -19,4 +19,4 @@ $outfile = "C:\TPI\data\pictures.csv"
 
 # write data in CSV 
 "PICTURE" >> $outfile
-foreach($item in $list) { echo 'assets/'$item.Name >> $outfile }
+foreach($item in $list) { 'assets/'+$item.Name >> $outfile }
