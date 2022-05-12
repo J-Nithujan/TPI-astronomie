@@ -23,10 +23,10 @@ COPY public.types (name)
 FROM 'C:\TPI\data\TYPE.csv'
 DELIMITER ',' CSV HEADER;
 
-COPY public.tmp (messier_number, ngc_number, type, constellation, right_ascension, declination, apparent_magnitude, size, distance, season, observation_difficulty)
+COPY public.tmp_celestial_objects (messier_number, ngc_number, type, constellation, right_ascension, declination, apparent_magnitude, size, distance, season, observation_difficulty)
 FROM 'C:\TPI\data\LeCatalogueMessier.csv'
 DELIMITER ',' CSV HEADER;
 
-COPY public.celestial_objects (pictures)
+COPY public.tmp_pictures (messier_number, picture)
 FROM 'C:\TPI\data\pictures.csv'
-DELIMITER ',' CSV HEADER;
+DELIMITER ',' CSV HEADER ;

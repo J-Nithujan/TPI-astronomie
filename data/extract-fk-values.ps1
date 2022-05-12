@@ -5,9 +5,12 @@
 # Version: 12.05.22
 ####################################
 
-$properties= $("CONS", "TYPE", "Meilleur saison", "difficultÃ© d'observation")
+Push-Location $PSScriptRoot 
+
+$properties= $("CONS", "TYPE", "Meilleur saison", "difficulté d'observation")
 foreach($key in $properties){
-    Import-Csv -Path .\LeCatalogueMessier.csv | $Data = Select-Object -Property $key -Unique 
-    $key = $key.Normalize("FormD") -replace '\p{M}', ''
-    Export-Csv $data -path .\$key.csv -NoTypeInformation -Encoding UTF8 -Force
-}
+        #$key = $key.Normalize("FormD") -replace '\p{M}', ''
+        Import-Csv -Path .\csv\LeCatalogueMessier.csv | Select-Object -Property $key -Unique | Export-Csv -path .\csv\$key.csv -Force -NoTypeInformation -Encoding UTF8
+    }
+
+Pop-Location

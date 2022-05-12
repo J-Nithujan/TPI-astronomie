@@ -1,3 +1,5 @@
-tests dans la doc ??
+Q: MLD et table tmp ? et quid de la doc ? 
+- A: pas besoin mais à mettre dans réalisation
 
-MLD et table tmp ? et quid de la doc ?
+Q: Si un/e utilisateur/trice décide de s'inscrire à plusieurs sorties --> quid de la db ??? 
+-A:
