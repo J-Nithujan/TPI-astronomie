@@ -1,7 +1,7 @@
 -- Project: TPI
 -- Title: copy-csv.sql
 -- Author: Nithujan Jegatheeswaran
--- Version: 11.05.22
+-- Version: 12.05.22
 
 COPY public.constellations (name)
 FROM 'C:\TPI\data\cons.csv'
@@ -25,4 +25,8 @@ DELIMITER ',' CSV HEADER;
 
 COPY public.tmp (messier_number, ngc_number, type, constellation, right_ascension, declination, apparent_magnitude, size, distance, season, observation_difficulty)
 FROM 'C:\TPI\data\LeCatalogueMessier.csv'
+DELIMITER ',' CSV HEADER;
+
+COPY public.celestial_objects (pictures)
+FROM 'C:\TPI\data\pictures.csv'
 DELIMITER ',' CSV HEADER;

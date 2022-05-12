@@ -1,3 +1,10 @@
+####################################
+# Project: TPI
+# Title: extract-fk-values
+# Author: Nithujan Jegatheeswaran
+# Version: 12.05.22
+####################################
+
 $properties= $("CONS", "TYPE", "Meilleur saison", "difficulté d'observation")
 foreach($key in $properties){
     Import-Csv -Path .\LeCatalogueMessier.csv | $Data = Select-Object -Property $key -Unique 
