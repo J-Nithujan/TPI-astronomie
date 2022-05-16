@@ -1,7 +1,8 @@
-# Version: 05.05.22
+# Version: 16.05.22
 
 from flask import Flask, render_template, redirect, url_for, request, session
 
+from app.model.celestial_objects_mgmt import *
 from app.model.forms import LoginForm
 from app.model.administrator_mgmt import check_login
 
@@ -58,10 +59,16 @@ def logout():
 @app.route('/catalog/')
 def catalog():
     """
-    Displays the page with the Messier catalog object
+    Displays the page with the Messier catalog objects
     
     :return: Renders the template catalog.html ....
     """
+    celestial_objects = get_celestial_objects()
+
+    if 'user' in session:
+        return render_template('catalog.html', title='Catalogue Messier', user=session['email'], list=celestial_objects)
+    else:
+        return  render_template('catalog.html', title='Catalogue Messier', list=celestial_objects)
     pass
 
 
