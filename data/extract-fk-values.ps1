@@ -9,8 +9,8 @@ Push-Location $PSScriptRoot
 
 $properties= $("CONS", "TYPE", "Meilleur saison", "difficulté d'observation")
 foreach($key in $properties){
-        #$key = $key.Normalize("FormD") -replace '\p{M}', ''
-        Import-Csv -Path .\csv\LeCatalogueMessier.csv | Select-Object -Property $key -Unique | Export-Csv -path .\csv\$key.csv -Force -NoTypeInformation -Encoding UTF8
+        $normalized_key = $key.Normalize("FormD") -replace '\p{M}', ''
+        Import-Csv -Path .\csv\LeCatalogueMessier.csv | Select-Object -Property $key -Unique | Export-Csv -path .\csv\$normalized_key.csv -Force -NoTypeInformation -Encoding UTF8
     }
 
 Pop-Location
