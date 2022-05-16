@@ -13,6 +13,7 @@ def check_login(form: LoginForm):
     hashed = sha256(encoded).hexdigest()
     try:
         admin: Administrators = Administrators.query.filter_by(email=form.email.data).first()
+
         if admin:
             if admin.password == hashed:
                 return True
