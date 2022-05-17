@@ -1,5 +1,27 @@
+09-12.05 (?)
+------------
 Q: MLD et table tmp ? et quid de la doc ? 
-- A: pas besoin mais à mettre dans réalisation
+A: pas besoin mais à mettre explications dans réalisation
+
+17.05
+-----
+Q: Tests icescrum pour maquette
+A: pas besoin de tests
 
 Q: Si un/e utilisateur/trice décide de s'inscrire à plusieurs sorties --> quid de la db ??? 
--A:
+A: mcd -> identifiants nom, prénom, num / email
+
+Q: Version papier: 
+A: demander à M. Roy s'il veut une version
+
+Q: Icescrum dans doc
+A: Mettre le lien et expliqué + use email heig pour M. Berney + demandé si ça marche 
+
+Q: Rendu final (qui ?)
+A: Le mettre dans le casier de M. Altieri --> Secrétariat ou M. Ithurbide
+
+Q: Lorem ipsum
+A: à enlever pour la version finale
+
+Q: Lien Git
+A: A communique aux experts + cdp
