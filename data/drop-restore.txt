@@ -1,0 +1,12 @@
+set PGPASSWORD=Pa$$w0rd
+set PGUSER=postgres
+
+pg_dump -Fc -d db_astronomy > c:\TPI\data\dump
+
+# drop database
+dropdb -U postgres -d db_astronomy
+
+# if dropped
+createdb -U postgres -d db_astronomy
+
+pg_restore -Fc -d db_astronomy < :\TPI\data\dump
