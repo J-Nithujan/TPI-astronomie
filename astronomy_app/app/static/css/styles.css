@@ -51,7 +51,19 @@ header, footer{
     color: #232CD9;
 }
 
-.user-input, .user-input:focus {
+input, select {
     background-color: #0D0D0D;
     color: #99AABF;
+}
+
+.object_image{
+    width: 140px;
+}
+
+label{
+    color: #A7F2B2;
+}
+
+#messier_catalog{
+     color: #A7F2B2;
 }
