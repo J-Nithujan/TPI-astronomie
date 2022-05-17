@@ -1,5 +1,5 @@
 {#
- Version: 05.05.21
+ Version: 17.05.21
 #}
 {% extends 'main-template.html' %}
 
@@ -28,10 +28,10 @@
             <form action="{{ url_for('login') }}" method="post">
                 {{ form.csrf_token }}
                 <div class="form-floating mb-3">
-                    {{ form.email(class_='form-control user-input') }} {{ form.email.label() }}
+                    {{ form.email(class_='form-control') }} {{ form.email.label() }}
                 </div>
                 <div class="form-floating mb-3">
-                    {{ form.password(class_='form-control user-input') }} {{ form.password.label() }}
+                    {{ form.password(class_='form-control') }} {{ form.password.label() }}
                 </div>
                 {{ form.login(class_='form-control mt-5') }}
             </form>
