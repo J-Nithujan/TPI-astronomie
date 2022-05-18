@@ -26,4 +26,5 @@ SELECT tmp_celestial_objects.messier_number,
 	LEFT JOIN public.types
 		ON tmp_celestial_objects.type = types.name
 	LEFT JOIN public.tmp_pictures
-		ON tmp_pictures.messier_number = tmp_celestial_objects.messier_number;
+		ON tmp_pictures.messier_number = tmp_celestial_objects.messier_number
+	ORDER BY tmp_celestial_objects.id;
