@@ -22,12 +22,13 @@
 
     <!-- Bootstrap-select plugin -->
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-select.css') }}">
+{#    <link rel="stylesheet"#}
+{#          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">#}
+{#    <!-- Latest compiled and minified JavaScript -->#}
+{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>#}
+{#    <!-- (Optional) Latest compiled and minified JavaScript translation files -->#}
+{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>#}
 
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 </head>
@@ -48,7 +49,7 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 te">
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="{{ url_for('index') }}">Acceuil</a>
+                        <a class="nav-link fs-5" href="{{ url_for('index') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link fs-5" href="{{ url_for('catalog') }}">Catalogue Messier</a>
@@ -124,10 +125,18 @@
         © Copyright 2022
     </div>
 </footer>
+<script src="{{ url_for('static', filename="js/bootstrap-select.js") }}"></script>
 <script>
     $(document).ready(function () {
         $('#messier_catalog').DataTable();
     });
+
+    /*$(function () {
+        $('select').selectpicker();
+    });*/
+    $(".selectpicker").selectpicker({
+        "title": "Select Options"
+    }).selectpicker("render");
 </script>
 </body>
 </html>

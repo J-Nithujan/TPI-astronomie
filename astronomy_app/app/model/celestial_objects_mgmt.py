@@ -14,7 +14,7 @@ def get_celestial_objects() -> list[CelestialObjects]:
     :return: A list of all the CelestialObjects in the database
     """
     try:
-        celestial_objects = CelestialObjects.query.all()
+        celestial_objects = CelestialObjects.query.order_by(CelestialObjects.id).all()
         # Examples to access join table's values
         # cons = data[0].constellation.name
         # diff = data[0].observation_difficulty.name
@@ -25,5 +25,4 @@ def get_celestial_objects() -> list[CelestialObjects]:
         return celestial_objects
 
     except OperationalError:
-        # TODO: is it enough ???
         flash('Erreur: Base de données injoignable')

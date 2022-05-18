@@ -1,10 +1,14 @@
 {# Version 16.05.22 #}
 
-{% extends 'main-template.html' %}
+{% extends 'main_template.html' %}
 
 {% block title %} Catalogue de Messier {% endblock %}
 
 {% block breadcrumb_items %}
+    <li class="breadcrumb-item">
+        <a class="text-decoration-none" href="{{ url_for('index') }}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item active text-light" aria-current="page">Catalogue Messier</li>
 {% endblock breadcrumb_items %}
 
 {% block content %}
@@ -26,6 +30,7 @@
             <table id="messier_catalog" class="table table-dark table-hover">
                 <thead>
                 <tr>
+                    <th class="text-center">N°</th>
                     <th class="text-center">Numéro Messier</th>
                     <th class="text-center">Numéro NGC</th>
                     <th class="text-center">Type d'objet</th>
@@ -50,6 +55,7 @@
 
                         {% for object in list %}
                             <tr>
+                                <td class="text-center align-middle">{{ object.id }}</td>
                                 <td class="text-center align-middle">{{ object.messier_number }}</td>
                                 <td class="text-center align-middle">{{ object.ngc_number }}</td>
                                 <td class="text-center align-middle">{{ object.type.name }}</td>

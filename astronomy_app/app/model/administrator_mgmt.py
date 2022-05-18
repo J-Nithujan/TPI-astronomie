@@ -18,9 +18,10 @@ def check_login(form: LoginForm):
             if admin.password == hashed:
                 return True
             else:
-                form.password.errors.append('Mot de passe incorrect')
+                form.password.errors.append('Identifiants incorrects')
+                return False
         else:
-            form.login.errors.append('Utilisateur inexistant')
+            form.login.errors.append('Identifiants incorrects')
             return False
 
     except OperationalError:
