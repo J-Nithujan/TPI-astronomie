@@ -1,5 +1,5 @@
 - tests dans icescrum
 
-- chemin des images pour objets célestes
-
 - rédaction des rés. des tests dans doss.
+
+- documenter les conventions de nommage appliquées (Python, CPNV, custom, etc)
