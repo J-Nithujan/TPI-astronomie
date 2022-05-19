@@ -9,10 +9,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             crossorigin="anonymous"></script>
+
     <script src="https://kit.fontawesome.com/90ed8db92f.js" crossorigin="anonymous"></script>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.js"
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
@@ -23,12 +26,6 @@
     <!-- Bootstrap-select plugin -->
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-select.css') }}">
-{#    <link rel="stylesheet"#}
-{#          href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">#}
-{#    <!-- Latest compiled and minified JavaScript -->#}
-{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>#}
-{#    <!-- (Optional) Latest compiled and minified JavaScript translation files -->#}
-{#    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/i18n/defaults-*.min.js"></script>#}
 
     <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
 </head>
@@ -66,7 +63,7 @@
             </div>
         </nav>
     </div>
-    <div class="col-lg-4 d-flex justify-content-end mt-auto mb-auto">
+    <div class="col-lg-4 d-flex justify-content-end  mt-auto mb-auto">
         {% if user %}
             <a class="text-uppercase text-decoration-none" href="{{ url_for('logout') }}">Logout</a>
         {% else %}
@@ -98,13 +95,13 @@
 
 <!-- footer-->
 <footer class="row mt-5 pt-3 ms-auto me-auto border-top border-2 justify-content-center">
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
         <div class="fs-5">Contact</div>
         <div id="contact" class="p-0 mt-3">
             Email: contact@info.com
         </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-3">
         <div class="fs-5">Nous suivre</div>
         <div class="mt-3">
             <a href="#" class="me-4">
@@ -131,11 +128,8 @@
         $('#messier_catalog').DataTable();
     });
 
-    /*$(function () {
-        $('select').selectpicker();
-    });*/
     $(".selectpicker").selectpicker({
-        "title": "Select Options"
+        "title": "Choisir une/des option/s"
     }).selectpicker("render");
 </script>
 </body>

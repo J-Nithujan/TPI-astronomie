@@ -27,34 +27,55 @@
         <div class="col-md-8 mt-3 mb-3 ms-auto me-auto">
             <form action="{{ url_for('new_outing') }}" method="post">
                 {{ form.csrf_token }}
-                <div class="form-floating mb-3">
-                    {{ form.theme(class_='form-control') }} {{ form.theme.label() }}
-                </div>
-                <div class="form-floating mb-3">
-                    {{ form.meeting_time(class_='form-control') }} {{ form.meeting_time.label() }}
-                </div>
-                <div class="form-floating mb-3">
-                    {{ form.duration(class_='form-control') }} {{ form.duration.label() }}
-                </div>
-                <div class="form-floating mb-3">
-                    {{ form.place(class_='form-control') }} {{ form.place.label() }}
-                </div>
-                <div class="form-floating mb-3">
-                    {{ form.max_people(class_='form-control') }} {{ form.max_people.label() }}
-                </div>
-                {{ form.celestial_objects.label() }}
-                <div class=" mb-3">
-                    {{ form.celestial_objects(class_='selectpicker') }}
-                </div>
-                <div class="mb-3">
-                    {{ form.equipments.label() }}
-                    {{ form.equipments(class_='form-control') }}
-                </div>
-                <div class=" mb-3">
-                    {{ form.comment.label() }}
-                    {{ form.comment(class_='form-control') }}
-                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class=" mb-3">
+                            {{ form.theme.label() }}
+                            {{ form.theme(class_='form-control mt-2') }}
+                        </div>
 
+                        <div class="mb-3">
+                            {{ form.meeting_time.label() }}
+                            {{ form.meeting_time(class_='form-control mt-2') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.duration.label() }}
+                            {{ form.duration(class_='form-control mt-2') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.place.label() }}
+                            {{ form.place(class_='form-control mt-2') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.max_people.label() }}
+                            {{ form.max_people(class_='form-control mt-2') }}
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            {{ form.equipments.label() }}
+                            {{ form.equipments(class_='form-control mt-2') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.comment.label() }}
+                            {{ form.comment(class_='form-control mt-2') }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form.celestial_objects.label() }}
+                            <span class="text-secondary">(plusieurs choix possible)</span>
+                            <br>
+                            {{ form.celestial_objects(class_='selectpicker mt-2') }}
+                        </div>
+
+                        <div class="text-danger">* Champs requis</div>
+                    </div>
+                </div>
                 {{ form.add_outing(class_='form-control mt-5') }}
             </form>
         </div>

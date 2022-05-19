@@ -3,3 +3,5 @@
 - rédaction des rés. des tests dans doss.
 
 - documenter les conventions de nommage appliquées (Python, CPNV, custom, etc)
+
+- bouton pour revenir en haut sur catalogue d'objets célestes ++ remonte quand refresh

@@ -56,8 +56,9 @@ header, footer{
     background-color: #0D0D0D;
 }
 
-button {
-    border: 1px solid #99AABF;
+.btn {
+    border: 1px solid #adb5bd ;
+    color: #A7F2B2;
 }
 
 .form-control:focus {

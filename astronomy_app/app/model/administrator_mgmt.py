@@ -8,7 +8,7 @@ from app.model.models import Administrators
 from app.model.forms import LoginForm
 
 
-def check_login(form: LoginForm):
+def check_login(form: LoginForm) -> bool:
     encoded: bytes = form.password.data.encode()
     hashed = sha256(encoded).hexdigest()
     try:
