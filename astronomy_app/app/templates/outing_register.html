@@ -1,0 +1,67 @@
+{#
+ # File: outing_register.html
+ # Author: Nithujan Jegatheeswaran
+ # Brief: Web page
+ # Version: 23.05.2022
+ #}
+
+{% extends 'main_template.html' %}
+
+{% block title %} S'inscrire à la sortie {% endblock %}
+
+{% block breadcrumb_items %}
+    <li class="breadcrumb-item">
+        <a class="text-decoration-none" href="{{ url_for('index') }}">Accueil</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a class="text-decoration-none" href="{{ url_for('outings') }}">Sorties</a>
+    </li>
+    <li class="breadcrumb-item active text-light" aria-current="page">Inscription à la sortie</li>
+{% endblock breadcrumb_items %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 text-center mt-5 mb-auto">
+            <div class="fs-4">Formulaire d'inscription</div>
+        </div>
+
+        <div class="col-md-8 mt-3 ms-auto me-auto">
+            {% if form.errors %}
+                {% include 'error_messages.html' %}
+            {% endif %}
+        </div>
+
+        <div class="col-md-8 mt-3 mb-3 ms-auto me-auto">
+            <form action="{{ url_for('register_for_outing', outing_id=outing_id) }}" method="post">
+                {{ form.csrf_token }}
+                <div class="form-floating mb-3">
+                    {{ form.email(class_='form-control') }}
+                    {{ form.email.label() }}
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.firstname(class_='form-control') }}
+                    {{ form.firstname.label() }}
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.lastname(class_='form-control') }}
+                    {{ form.lastname.label() }}
+                </div>
+                <div class="form-floating mb-3">
+                    {{ form.age(class_='form-control') }}
+                    {{ form.age.label() }}
+                </div>
+                <div class="mb-3">
+                    {{ form.phone_number.label() }}
+                    {{ form.phone_number(class_='form-control mt-2') }}
+                </div>
+
+                <div class="text-danger">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    Tout les champs sont obligatoires
+                </div>
+
+                {{ form.submit(class_='form-control mt-5') }}
+            </form>
+        </div>
+    </div>
+{% endblock content %}

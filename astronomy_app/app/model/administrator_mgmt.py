@@ -25,6 +25,6 @@ def check_login(form: LoginForm) -> bool:
             return False
 
     except OperationalError:
-        form.login.errors.append('Erreur avec la base de données')
+        form.login.errors.append('Erreur lors de la transaction avec la base de données')
         return False
 

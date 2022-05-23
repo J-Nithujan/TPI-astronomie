@@ -3,7 +3,7 @@
 */
 
 body{
-    color: #A7F2B2;
+    color: #D9C68F;
     background-color: #000000;
 }
 
@@ -24,7 +24,6 @@ header, footer{
 #page-title{
     background-image: url("../assets/index-title-background.jpg");
     /* source: https://www.pexels.com/fr-fr/photo/ciel-etoile-998641/ */
-    background-size: cover;
 }
 
 
@@ -52,18 +51,18 @@ header, footer{
 }
 
 .form-control, select, option, input, button {
-    color: #A7F2B2;
+    color: #D9C68F;
     background-color: #0D0D0D;
 }
 
 .btn {
     border: 1px solid #adb5bd ;
-    color: #A7F2B2;
+    color: #D9C68F;
 }
 
 .form-control:focus {
     background-color: #0D0D0D;
-    color: #A7F2B2;
+    color: #D9C68F;
 }
 
 .object_image{
@@ -71,5 +70,5 @@ header, footer{
 }
 
 #messier_catalog{
-     color: #A7F2B2;
+     color: #D9C68F;
 }

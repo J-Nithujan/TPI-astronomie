@@ -1,5 +1,5 @@
 {#
-  Version: 05.05.22
+  Version: 23.05.22
 #}
 
 <!DOCTYPE html>
@@ -32,11 +32,11 @@
 <body>
 <!-- header -->
 <header class="row ms-auto me-auto">
-    <div class="col-lg-4 d-flex">
+    <div class="col-lg-3 d-flex">
         <img id="logo" src="{{ url_for('static', filename='assets/website-logo.jpg') }}" alt="logo">
         <div class="fs-2">Astronomie</div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-6">
         <nav class="navbar navbar-expand-lg navbar-dark">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -44,26 +44,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-lg-0 te">
+                <ul class="navbar-nav mb-2">
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="{{ url_for('index') }}">Accueil</a>
+                        <a class="nav-link fs-5 me-3 text-nowrap" href="{{ url_for('index') }}">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="{{ url_for('catalog') }}">Catalogue Messier</a>
+                        <a class="nav-link fs-5 me-3 text-nowrap" href="{{ url_for('catalog') }}">Catalogue Messier</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link fs-5" href="{{ url_for('outings') }}">Sorties</a>
+                        <a class="nav-link fs-5 me-3 text-nowrap" href="{{ url_for('outings') }}">Sorties</a>
                     </li>
                     {% if user %}
                         <li class="nav-item">
-                            <a class="nav-link fs-5" href="{{ url_for('new_outing') }}">Nouvelle sortie</a>
+                            <a class="nav-link fs-5 me-3 text-nowrap" href="{{ url_for('new_outing') }}">Nouvelle
+                                sortie</a>
                         </li>
                     {% endif %}
                 </ul>
             </div>
         </nav>
     </div>
-    <div class="col-lg-4 d-flex justify-content-end  mt-auto mb-auto">
+    <div class="col-lg-3 d-flex justify-content-end  mt-auto mb-auto">
         {% if user %}
             <a class="text-uppercase text-decoration-none" href="{{ url_for('logout') }}">Logout</a>
         {% else %}

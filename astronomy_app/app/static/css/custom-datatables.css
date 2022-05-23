@@ -437,7 +437,7 @@ table.dataTable th, table.dataTable td {
     text-align: center;
     text-decoration: none !important;
     cursor: pointer;
-    color: #A7F2B2 !important;
+    color: #D9C68F !important;
     border: 1px solid transparent;
     border-radius: 2px
 }
@@ -491,7 +491,7 @@ table.dataTable th, table.dataTable td {
 }
 
 .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
-    color: #A7F2B2;
+    color: #D9C68F;
 }
 
 .dataTables_wrapper .dataTables_scroll {

@@ -1,7 +1,9 @@
-# Version: 16.05.22
+# File: celestial_objects_mgmt.py
+# Author: Nithujan Jegatheeswaran
+# Brief: All the functions used to modify the table 'celestial_objects' of the database
+# Version: 16.05.2022
 
 from flask import flash
-from sqlalchemy.sql import *
 from sqlalchemy.exc import *
 
 from app.model.models import db, CelestialObjects, Constellations, Types, ObservationDifficulties, Seasons
@@ -15,9 +17,6 @@ def get_celestial_objects() -> list[CelestialObjects]:
     """
     try:
         celestial_objects = CelestialObjects.query.order_by(CelestialObjects.id).all()
-        # Examples to access join table's values
-        # cons = data[0].constellation.name
-        # diff = data[0].observation_difficulty.name
 
         if len(celestial_objects) == 0:
             flash('Erreur: Base de données vide')
