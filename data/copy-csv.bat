@@ -1,4 +1,5 @@
 set PGPASSWORD=Pa$$w0rd
+
 psql -U postgres -d db_astronomy -c "\copy public.constellations (name) FROM .\csv\cons.csv DELIMITER ',' CSV HEADER ENCODING 'UTF8'; 
 
 psql -U postgres -d db_astronomy -c "\copy public.seasons (name) FROM '.\csv\Meilleur saison.csv' DELIMITER ',' CSV HEADER ENCODING 'UTF8';"

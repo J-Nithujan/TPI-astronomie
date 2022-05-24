@@ -25,6 +25,10 @@ def check_login(form: LoginForm) -> bool:
             return False
 
     except OperationalError:
-        form.login.errors.append('Erreur lors de la transaction avec la base de données')
+        form.login.errors.append('Erreur: Base de données inexistante')
         return False
+    except ProgrammingError:
+        form.login.errors.append('Erreur: Structure de la base de données incomplète')
+    except Exception:
+        form.login.errors.append('Erreur: problème avec la base de données')
 

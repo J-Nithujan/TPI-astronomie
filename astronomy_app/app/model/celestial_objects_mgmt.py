@@ -19,9 +19,13 @@ def get_celestial_objects() -> list[CelestialObjects]:
         celestial_objects = CelestialObjects.query.order_by(CelestialObjects.id).all()
 
         if len(celestial_objects) == 0:
-            flash('Erreur: Base de données vide')
+            flash('Base de données vide', 'Erreur')
 
         return celestial_objects
 
     except OperationalError:
-        flash('Erreur: Base de données injoignable')
+        flash('Base de données injoignable', 'Erreur')
+    except ProgrammingError:
+        flash('Structure de la base de données incomplète', 'Erreur')
+    except Exception:
+        flash('Erreur: problème avec la base de données')

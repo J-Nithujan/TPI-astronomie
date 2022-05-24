@@ -16,10 +16,10 @@ outing_has_celestial_object: db.Table = db.Table('outing_has_celestial_object',
 
 user_has_outing: db.Table = db.Table('user_has_outing',
                                      db.Column('id', db.Integer, autoincrement=True, primary_key=True),
-                                     db.Column('users', db.Integer, db.ForeignKey('users.id'),
+                                     db.Column('user_id', db.Integer, db.ForeignKey('users.id'),
                                                primary_key=True,
                                                nullable=False),
-                                     db.Column('outings', db.Integer,
+                                     db.Column('outing_id', db.Integer,
                                                db.ForeignKey('outings.id'), primary_key=True,
                                                nullable=False))
 
@@ -39,7 +39,7 @@ class Constellations(db.Model):
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
-
+    
     celestial_objects = db.relationship('CelestialObjects', lazy=True, backref='constellation')
 
 
@@ -49,7 +49,7 @@ class ObservationDifficulties(db.Model):
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(15), nullable=False, unique=True)
-
+    
     celestial_objects = db.relationship('CelestialObjects', lazy=True,
                                         backref='observation_difficulty')
 
@@ -60,7 +60,7 @@ class Seasons(db.Model):
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(10), nullable=False, unique=True)
-
+    
     celestial_objects = db.relationship('CelestialObjects', lazy=True, backref='season')
 
 
@@ -70,7 +70,7 @@ class Types(db.Model):
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
-
+    
     celestial_objects = db.relationship('CelestialObjects', lazy=True, backref='type')
 
 
@@ -87,17 +87,17 @@ class CelestialObjects(db.Model):
     size = db.Column(db.String(15))
     distance = db.Column(db.String(10))
     picture = db.Column(db.String(100))
-
+    
     # Foreign keys
     constellation_id = db.Column(db.Integer, db.ForeignKey('constellations.id'), nullable=False)
     observation_difficulty_id = db.Column(db.Integer, db.ForeignKey('observation_difficulties.id'),
-                                                     nullable=False)
+                                          nullable=False)
     season_id = db.Column(db.Integer, db.ForeignKey('seasons.id'), nullable=False)
     type_id = db.Column(db.Integer, db.ForeignKey('types.id'), nullable=False)
-
+    
     # Reference to the junction table `outing_has_celestial_object`
     outings = db.relationship('Outings', secondary=outing_has_celestial_object, lazy=True,
-                                               backref='celestial_objects')
+                              backref='celestial_objects')
 
 
 class Outings(db.Model):
@@ -125,3 +125,6 @@ class Users(db.Model):
     lastname = db.Column(db.String(50))
     age = db.Column(db.Integer)
     phone_number = db.Column(db.String(20))
+    
+    outings: db.relationship = db.relationship('Outings', secondary=user_has_outing, lazy=True,
+                                               backref=db.backref('users', lazy=False))

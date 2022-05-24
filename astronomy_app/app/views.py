@@ -6,9 +6,9 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 
 from app.model.celestial_objects_mgmt import *
-from app.model.forms import LoginForm, NewOutingForm, OutingRegistrationForm
-from app.model.administrator_mgmt import check_login
-from app.model.outing_mgmt import add_outing, get_outing_list
+from app.model.administrator_mgmt import *
+from app.model.outing_mgmt import *
+from app.model.user_mgmt import *
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -39,7 +39,7 @@ def login():
         if check_login(form):
             # Login success
             session['user'] = form.email.data
-            flash('Login réussi')
+            flash('Login réussi', 'Info')
             return redirect(url_for('index'))
         else:
             # Login failed
@@ -96,8 +96,7 @@ def new_outing():
     if form.validate_on_submit():
         if add_outing(form):
             # Outing successfully added
-            return redirect(url_for('index'))
-            # return redirect(url_for('outings'))
+            return redirect(url_for('outings'))
         else:
             # Error/s in the form
             return render_template('new_outing.html', user=session['user'], form=form)
@@ -109,8 +108,9 @@ def new_outing():
 @app.route('/outings/')
 def outings():
     """
- 
-    :return:
+    This function is used to access the list of outing
+    
+    :return: Renders the template outing_list.html
     """
     outing_list = get_outing_list()
 
@@ -120,17 +120,20 @@ def outings():
         return render_template('outing_list.html', list=outing_list)
 
 
-@app.route('/outings/register/<outing_id>', methods=['POST', 'GET'])
+@app.route('/outings/register/<outing_id>/', methods=['POST', 'GET'])
 def register_for_outing(outing_id: int):
     """
+    Displays the page with the form used to register for an outing and handles its submission
     
-    :return:
+    :return: Renders the template outing_register.html or redirect to /outings
     """
     form = OutingRegistrationForm()
 
     if form.validate_on_submit():
         # Add user to the database
-        pass
+        save_registration(form, outing_id)
+        flash('Inscription à la sortie réussie', 'Info')
+        return redirect(url_for('outings'))
     else:
         if 'user' in session:
             return render_template('outing_register.html', user=session['user'], form=form, outing_id=outing_id)

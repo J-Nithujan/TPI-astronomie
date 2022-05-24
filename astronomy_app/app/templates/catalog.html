@@ -24,8 +24,10 @@
             <br>
             <br>
             <ul>
-                <li>N°: Numéro de l'objet dans la base de données du site</li>
-                {# TODO: remove it ??? #}
+                <li>ID: Numéro de l'objet dans la base de données du site, utile pour trier les éléments dans l'ordre de
+                    base car en utilisant la fonction de tri sur la colonne 'M', le lignes sont affichées dans l'ordre
+                    alphabétique
+                </li>
                 <li>M : Numéro de l’objet dans le catalogue.</li>
                 <li>NGC : Numéro de l’objet dans le nouveau catalogue général.</li>
                 <li>Type : La classification de l’objet.</li>
@@ -46,7 +48,7 @@
             <table id="messier_catalog" class="table table-dark table-hover">
                 <thead>
                 <tr>
-                    <th class="text-center">N°</th>
+                    <th class="text-center">ID</th>
                     <th class="text-center">M</th>
                     <th class="text-center">NGC</th>
                     <th class="text-center">Type</th>
@@ -61,10 +63,12 @@
                     <th class="text-center">Image</th>
                 </thead>
                 <tbody class="">
-                {% with messages = get_flashed_messages() %}
+                {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
-                        {% for message in messages %}
-                            <td colspan="13" class="text-center text-danger fs-3">{{ message }}</td>
+                        {% for category, message in messages %}
+                            {% if category == 'Erreur' %}
+                                <td colspan="13" class="text-center text-danger fs-3">{{ category }}: {{ message }}</td>
+                            {% endif %}
                         {% endfor %}
 
                     {% else %}

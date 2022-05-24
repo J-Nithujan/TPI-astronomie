@@ -34,9 +34,9 @@ class NewOutingForm(FlaskForm):
                         render_kw={'placeholder': ' '})
 
     meeting_time = StringField('Date et heure *', validators=[
-        valid_time(message='Indiquer une date et une heure de rendez-vous au format HH:MM jj-mm-aaaa',
+        valid_time(message='Indiquer une date et une heure de rendez-vous au format HH:MM jj.mm.aaaa',
                    empty_message='Indiquer une heure et une date de rendez-vous')],
-                               render_kw={'placeholder': datetime.datetime.now().strftime('%H:%M %d-%m-%Y'),
+                               render_kw={'placeholder': datetime.datetime.now().strftime('%H:%M %d.%m.%Y'),
                                           'min': datetime.datetime.now()})
 
     duration = StringField('Durée *', validators=[
@@ -75,7 +75,7 @@ class OutingRegistrationForm(FlaskForm):
     lastname = StringField('Nom', validators=[length(min=1, max=50, message='Indiquer un nom (max. 50 caractères)')],
                            render_kw={'placeholder': ' '})
 
-    age = IntegerField('Age', validators=[length(min=1, message='Indiquer un âge')],
+    age = IntegerField('Age', validators=[number_range(min=1, max=100, message='Indiquer un âge (entre 1 et 100)')],
                        render_kw={'min': 0, 'max': 150, 'value': 0})
 
     phone_number = StringField('Numéro de téléphone', validators=[

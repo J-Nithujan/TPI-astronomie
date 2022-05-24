@@ -30,9 +30,14 @@ def add_outing(form: NewOutingForm):
         return True
 
     except OperationalError:
-        form.errors.append('Erreur lors de la transaction avec la base de données')
+        form.errors.append('Erreur: la transaction avec la base de données a échouée')
         return False
-
+    except ProgrammingError:
+        form.errors.append('Erreur: la structure de la base de données est incomplète')
+        return False
+    except Exception:
+        form.errors.errors.append('Erreur: problème avec la base de données')
+        return False
 
 def get_outing_list():
     """
@@ -44,13 +49,17 @@ def get_outing_list():
         outing_list: list[Outings] = Outings.query.order_by(Outings.id).all()
 
         if len(outing_list) == 0:
-            flash('Erreur: Base de données vide')
+            flash('Base de données vide', 'Erreur')
         else:
             for outing in outing_list:
                 outing.meeting_time = outing.meeting_time.strftime('%d.%m.%Y %H:%M')
                 outing.duration = outing.duration.strftime('%H:%M')
+                # outing.equipment.replace('\r\n', '\'<br>\'')
+                # outing.comment.replace('\r\n', '<br>')
 
         return outing_list
 
     except OperationalError:
-        flash('Erreur: Base de données injoignable')
+        flash('Base de données injoignable', 'Erreur')
+    except ProgrammingError:
+        flash('Structure de la base de données incomplète', 'Erreur')

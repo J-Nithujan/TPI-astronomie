@@ -1,0 +1,26 @@
+<!--
+ * File: success_messages.html
+ * Author: Nithujan Jegatheeswaran
+ * Brief:
+ * Version: 24.05.2022
+ -->
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="col-md-4 me-auto ms-auto mt-5 mb-auto">
+            {% for category, message in messages %}
+                {% if category == 'Info' %}
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <i class="fa-solid fa-circle-info"></i>
+                            {{ message }}<br>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endwith %}

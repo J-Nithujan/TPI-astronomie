@@ -69,6 +69,11 @@ header, footer{
     width: 180px;
 }
 
-#messier_catalog{
+#messier_catalog, #outing_list{
      color: #D9C68F;
+}
+
+pre{
+    font-family: inherit;
+    font-size: inherit;
 }
