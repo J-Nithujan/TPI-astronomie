@@ -5,6 +5,8 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 14.2
 
+-- Started on 2022-05-25 10:06:56
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
 SET idle_in_transaction_session_timeout = 0;
@@ -17,6 +19,7 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- TOC entry 2 (class 3079 OID 19757)
 -- Name: adminpack; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -24,7 +27,9 @@ CREATE EXTENSION IF NOT EXISTS adminpack WITH SCHEMA pg_catalog;
 
 
 --
--- Name: EXTENSION adminpack; Type: COMMENT; Schema: -; Owner: -
+-- TOC entry 3428 (class 0 OID 0)
+-- Dependencies: 2
+-- Name: EXTENSION adminpack; Type: COMMENT; Schema: -; Owner: 
 --
 
 COMMENT ON EXTENSION adminpack IS 'administrative functions for PostgreSQL';
@@ -35,7 +40,8 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- Name: administrators; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 210 (class 1259 OID 19767)
+-- Name: administrators; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.administrators (
@@ -45,8 +51,11 @@ CREATE TABLE public.administrators (
 );
 
 
+ALTER TABLE public.administrators OWNER TO postgres;
+
 --
--- Name: administrators_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 211 (class 1259 OID 19770)
+-- Name: administrators_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.administrators_id_seq
@@ -58,15 +67,20 @@ CREATE SEQUENCE public.administrators_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.administrators_id_seq OWNER TO postgres;
+
 --
--- Name: administrators_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3429 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: administrators_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.administrators_id_seq OWNED BY public.administrators.id;
 
 
 --
--- Name: celestial_objects; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 212 (class 1259 OID 19771)
+-- Name: celestial_objects; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.celestial_objects (
@@ -86,8 +100,11 @@ CREATE TABLE public.celestial_objects (
 );
 
 
+ALTER TABLE public.celestial_objects OWNER TO postgres;
+
 --
--- Name: celestial_objects_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 213 (class 1259 OID 19774)
+-- Name: celestial_objects_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.celestial_objects_id_seq
@@ -99,15 +116,20 @@ CREATE SEQUENCE public.celestial_objects_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.celestial_objects_id_seq OWNER TO postgres;
+
 --
--- Name: celestial_objects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3430 (class 0 OID 0)
+-- Dependencies: 213
+-- Name: celestial_objects_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.celestial_objects_id_seq OWNED BY public.celestial_objects.id;
 
 
 --
--- Name: constellations; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 214 (class 1259 OID 19775)
+-- Name: constellations; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.constellations (
@@ -116,8 +138,11 @@ CREATE TABLE public.constellations (
 );
 
 
+ALTER TABLE public.constellations OWNER TO postgres;
+
 --
--- Name: constellations_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 215 (class 1259 OID 19778)
+-- Name: constellations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.constellations_id_seq
@@ -129,15 +154,20 @@ CREATE SEQUENCE public.constellations_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.constellations_id_seq OWNER TO postgres;
+
 --
--- Name: constellations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3431 (class 0 OID 0)
+-- Dependencies: 215
+-- Name: constellations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.constellations_id_seq OWNED BY public.constellations.id;
 
 
 --
--- Name: observation_difficulties; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 216 (class 1259 OID 19779)
+-- Name: observation_difficulties; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.observation_difficulties (
@@ -146,8 +176,11 @@ CREATE TABLE public.observation_difficulties (
 );
 
 
+ALTER TABLE public.observation_difficulties OWNER TO postgres;
+
 --
--- Name: observation_difficulties_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 217 (class 1259 OID 19782)
+-- Name: observation_difficulties_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.observation_difficulties_id_seq
@@ -159,15 +192,20 @@ CREATE SEQUENCE public.observation_difficulties_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.observation_difficulties_id_seq OWNER TO postgres;
+
 --
--- Name: observation_difficulties_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3432 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: observation_difficulties_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.observation_difficulties_id_seq OWNED BY public.observation_difficulties.id;
 
 
 --
--- Name: outing_has_celestial_object; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 218 (class 1259 OID 19783)
+-- Name: outing_has_celestial_object; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.outing_has_celestial_object (
@@ -177,8 +215,11 @@ CREATE TABLE public.outing_has_celestial_object (
 );
 
 
+ALTER TABLE public.outing_has_celestial_object OWNER TO postgres;
+
 --
--- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 219 (class 1259 OID 19786)
+-- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.outing_has_celestial_object_id_seq
@@ -190,15 +231,20 @@ CREATE SEQUENCE public.outing_has_celestial_object_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.outing_has_celestial_object_id_seq OWNER TO postgres;
+
 --
--- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3433 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.outing_has_celestial_object_id_seq OWNED BY public.outing_has_celestial_object.id;
 
 
 --
--- Name: outings; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 220 (class 1259 OID 19787)
+-- Name: outings; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.outings (
@@ -214,8 +260,11 @@ CREATE TABLE public.outings (
 );
 
 
+ALTER TABLE public.outings OWNER TO postgres;
+
 --
--- Name: outings_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 221 (class 1259 OID 19792)
+-- Name: outings_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.outings_id_seq
@@ -227,15 +276,20 @@ CREATE SEQUENCE public.outings_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.outings_id_seq OWNER TO postgres;
+
 --
--- Name: outings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3434 (class 0 OID 0)
+-- Dependencies: 221
+-- Name: outings_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.outings_id_seq OWNED BY public.outings.id;
 
 
 --
--- Name: seasons; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 222 (class 1259 OID 19793)
+-- Name: seasons; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.seasons (
@@ -244,8 +298,11 @@ CREATE TABLE public.seasons (
 );
 
 
+ALTER TABLE public.seasons OWNER TO postgres;
+
 --
--- Name: seasons_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 223 (class 1259 OID 19796)
+-- Name: seasons_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.seasons_id_seq
@@ -257,15 +314,20 @@ CREATE SEQUENCE public.seasons_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.seasons_id_seq OWNER TO postgres;
+
 --
--- Name: seasons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3435 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: seasons_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.seasons_id_seq OWNED BY public.seasons.id;
 
 
 --
--- Name: types; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 224 (class 1259 OID 19797)
+-- Name: types; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.types (
@@ -274,8 +336,11 @@ CREATE TABLE public.types (
 );
 
 
+ALTER TABLE public.types OWNER TO postgres;
+
 --
--- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 225 (class 1259 OID 19800)
+-- Name: types_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.types_id_seq
@@ -287,15 +352,20 @@ CREATE SEQUENCE public.types_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.types_id_seq OWNER TO postgres;
+
 --
--- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3436 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: types_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.types_id_seq OWNED BY public.types.id;
 
 
 --
--- Name: user_has_outing; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 226 (class 1259 OID 19801)
+-- Name: user_has_outing; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.user_has_outing (
@@ -305,8 +375,11 @@ CREATE TABLE public.user_has_outing (
 );
 
 
+ALTER TABLE public.user_has_outing OWNER TO postgres;
+
 --
--- Name: user_has_outing_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 227 (class 1259 OID 19804)
+-- Name: user_has_outing_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.user_has_outing_id_seq
@@ -318,15 +391,20 @@ CREATE SEQUENCE public.user_has_outing_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.user_has_outing_id_seq OWNER TO postgres;
+
 --
--- Name: user_has_outing_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3437 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: user_has_outing_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.user_has_outing_id_seq OWNED BY public.user_has_outing.id;
 
 
 --
--- Name: users; Type: TABLE; Schema: public; Owner: -
+-- TOC entry 228 (class 1259 OID 19805)
+-- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.users (
@@ -339,8 +417,11 @@ CREATE TABLE public.users (
 );
 
 
+ALTER TABLE public.users OWNER TO postgres;
+
 --
--- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: -
+-- TOC entry 229 (class 1259 OID 19808)
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
 CREATE SEQUENCE public.users_id_seq
@@ -352,85 +433,101 @@ CREATE SEQUENCE public.users_id_seq
     CACHE 1;
 
 
+ALTER TABLE public.users_id_seq OWNER TO postgres;
+
 --
--- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: -
+-- TOC entry 3438 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
 ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- Name: administrators id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3210 (class 2604 OID 19809)
+-- Name: administrators id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.administrators ALTER COLUMN id SET DEFAULT nextval('public.administrators_id_seq'::regclass);
 
 
 --
--- Name: celestial_objects id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3211 (class 2604 OID 19810)
+-- Name: celestial_objects id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects ALTER COLUMN id SET DEFAULT nextval('public.celestial_objects_id_seq'::regclass);
 
 
 --
--- Name: constellations id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3212 (class 2604 OID 19811)
+-- Name: constellations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.constellations ALTER COLUMN id SET DEFAULT nextval('public.constellations_id_seq'::regclass);
 
 
 --
--- Name: observation_difficulties id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3213 (class 2604 OID 19812)
+-- Name: observation_difficulties id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.observation_difficulties ALTER COLUMN id SET DEFAULT nextval('public.observation_difficulties_id_seq'::regclass);
 
 
 --
--- Name: outing_has_celestial_object id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3214 (class 2604 OID 19813)
+-- Name: outing_has_celestial_object id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outing_has_celestial_object ALTER COLUMN id SET DEFAULT nextval('public.outing_has_celestial_object_id_seq'::regclass);
 
 
 --
--- Name: outings id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3215 (class 2604 OID 19814)
+-- Name: outings id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outings ALTER COLUMN id SET DEFAULT nextval('public.outings_id_seq'::regclass);
 
 
 --
--- Name: seasons id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3216 (class 2604 OID 19815)
+-- Name: seasons id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.seasons ALTER COLUMN id SET DEFAULT nextval('public.seasons_id_seq'::regclass);
 
 
 --
--- Name: types id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3217 (class 2604 OID 19816)
+-- Name: types id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.types ALTER COLUMN id SET DEFAULT nextval('public.types_id_seq'::regclass);
 
 
 --
--- Name: user_has_outing id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3218 (class 2604 OID 19817)
+-- Name: user_has_outing id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_has_outing ALTER COLUMN id SET DEFAULT nextval('public.user_has_outing_id_seq'::regclass);
 
 
 --
--- Name: users id; Type: DEFAULT; Schema: public; Owner: -
+-- TOC entry 3219 (class 2604 OID 19818)
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
 
 
 --
--- Data for Name: administrators; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3403 (class 0 OID 19767)
+-- Dependencies: 210
+-- Data for Name: administrators; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.administrators (id, email, password) FROM stdin;
@@ -439,7 +536,9 @@ COPY public.administrators (id, email, password) FROM stdin;
 
 
 --
--- Data for Name: celestial_objects; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3405 (class 0 OID 19771)
+-- Dependencies: 212
+-- Data for Name: celestial_objects; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.celestial_objects (id, messier_number, ngc_number, right_ascension, declination, apparent_magnitude, size, distance, picture, constellation_id, observation_difficulty_id, season_id, type_id) FROM stdin;
@@ -557,7 +656,9 @@ COPY public.celestial_objects (id, messier_number, ngc_number, right_ascension, 
 
 
 --
--- Data for Name: constellations; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3407 (class 0 OID 19775)
+-- Dependencies: 214
+-- Data for Name: constellations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.constellations (id, name) FROM stdin;
@@ -600,7 +701,9 @@ COPY public.constellations (id, name) FROM stdin;
 
 
 --
--- Data for Name: observation_difficulties; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3409 (class 0 OID 19779)
+-- Dependencies: 216
+-- Data for Name: observation_difficulties; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.observation_difficulties (id, name) FROM stdin;
@@ -613,7 +716,9 @@ COPY public.observation_difficulties (id, name) FROM stdin;
 
 
 --
--- Data for Name: outing_has_celestial_object; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3411 (class 0 OID 19783)
+-- Dependencies: 218
+-- Data for Name: outing_has_celestial_object; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.outing_has_celestial_object (id, outing_id, celestial_object_id) FROM stdin;
@@ -625,16 +730,23 @@ COPY public.outing_has_celestial_object (id, outing_id, celestial_object_id) FRO
 
 
 --
--- Data for Name: outings; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3413 (class 0 OID 19787)
+-- Dependencies: 220
+-- Data for Name: outings; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.outings (id, theme, meeting_time, duration, place, equipment, max_people, remaining_slots, comment) FROM stdin;
-1	Randonée nocturne	2022-12-25 22:00:00	03:30:00	Entrée ouest de la fôret du Méroire	- une lunette\r\n- des chaussures de marche\r\n	25	21	Pensez à prendre un parapluie, la météo annonce de la pluie
+1	Randonée nocturne	2022-12-25 22:00:00	03:30:00	Entrée ouest de la fôret du Méroire	- une lunette\n- des chaussures de marche\n	25	21	Pensez à prendre un parapluie, la météo annonce de la pluie
+2	Ciel du Printemps	2023-02-12 22:00:00	04:00:00	Entrée de la fôret au dessus de la ville d'Argon	\N	12	12	Séance d'initiation 
+3	Eclipse lunaire	2022-05-30 21:30:00	02:00:00	Sur la colline en face de l'arrêt de bus Place du Nord du bus 45	Prenez une lunette d'observation car nous n'en fournirons qu'un nombre limité	50	45	Eclipse lunaire partielle qui se déoulera vers 22:24
+4	Pleine lune	2022-06-15 20:00:00	01:30:00	Gare d'Yverdon	- prenez de l'eau car des températures fortes sont annoncées \n- chaussures de marche\n- 	20	4	\N
 \.
 
 
 --
--- Data for Name: seasons; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3415 (class 0 OID 19793)
+-- Dependencies: 222
+-- Data for Name: seasons; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.seasons (id, name) FROM stdin;
@@ -646,7 +758,9 @@ COPY public.seasons (id, name) FROM stdin;
 
 
 --
--- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3417 (class 0 OID 19797)
+-- Dependencies: 224
+-- Data for Name: types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.types (id, name) FROM stdin;
@@ -667,7 +781,9 @@ COPY public.types (id, name) FROM stdin;
 
 
 --
--- Data for Name: user_has_outing; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3419 (class 0 OID 19801)
+-- Dependencies: 226
+-- Data for Name: user_has_outing; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.user_has_outing (id, user_id, outing_id) FROM stdin;
@@ -679,7 +795,9 @@ COPY public.user_has_outing (id, user_id, outing_id) FROM stdin;
 
 
 --
--- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: -
+-- TOC entry 3421 (class 0 OID 19805)
+-- Dependencies: 228
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.users (id, email, firstname, lastname, age, phone_number) FROM stdin;
@@ -691,77 +809,98 @@ COPY public.users (id, email, firstname, lastname, age, phone_number) FROM stdin
 
 
 --
--- Name: administrators_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3439 (class 0 OID 0)
+-- Dependencies: 211
+-- Name: administrators_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.administrators_id_seq', 1, true);
 
 
 --
--- Name: celestial_objects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3440 (class 0 OID 0)
+-- Dependencies: 213
+-- Name: celestial_objects_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.celestial_objects_id_seq', 220, true);
 
 
 --
--- Name: constellations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3441 (class 0 OID 0)
+-- Dependencies: 215
+-- Name: constellations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.constellations_id_seq', 35, true);
 
 
 --
--- Name: observation_difficulties_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3442 (class 0 OID 0)
+-- Dependencies: 217
+-- Name: observation_difficulties_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.observation_difficulties_id_seq', 5, true);
 
 
 --
--- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3443 (class 0 OID 0)
+-- Dependencies: 219
+-- Name: outing_has_celestial_object_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.outing_has_celestial_object_id_seq', 4, true);
 
 
 --
--- Name: outings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3444 (class 0 OID 0)
+-- Dependencies: 221
+-- Name: outings_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.outings_id_seq', 1, true);
+SELECT pg_catalog.setval('public.outings_id_seq', 4, true);
 
 
 --
--- Name: seasons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3445 (class 0 OID 0)
+-- Dependencies: 223
+-- Name: seasons_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.seasons_id_seq', 4, true);
 
 
 --
--- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3446 (class 0 OID 0)
+-- Dependencies: 225
+-- Name: types_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.types_id_seq', 13, true);
 
 
 --
--- Name: user_has_outing_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3447 (class 0 OID 0)
+-- Dependencies: 227
+-- Name: user_has_outing_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.user_has_outing_id_seq', 4, true);
 
 
 --
--- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: -
+-- TOC entry 3448 (class 0 OID 0)
+-- Dependencies: 229
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
 SELECT pg_catalog.setval('public.users_id_seq', 4, true);
 
 
 --
--- Name: administrators administrators_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3221 (class 2606 OID 19820)
+-- Name: administrators administrators_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.administrators
@@ -769,7 +908,8 @@ ALTER TABLE ONLY public.administrators
 
 
 --
--- Name: celestial_objects celestial_objects_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3225 (class 2606 OID 19822)
+-- Name: celestial_objects celestial_objects_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -777,7 +917,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: constellations constellations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3229 (class 2606 OID 19824)
+-- Name: constellations constellations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.constellations
@@ -785,7 +926,8 @@ ALTER TABLE ONLY public.constellations
 
 
 --
--- Name: observation_difficulties observation_difficulties_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3233 (class 2606 OID 19826)
+-- Name: observation_difficulties observation_difficulties_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.observation_difficulties
@@ -793,7 +935,8 @@ ALTER TABLE ONLY public.observation_difficulties
 
 
 --
--- Name: outing_has_celestial_object outing_has_celestial_object_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3237 (class 2606 OID 19828)
+-- Name: outing_has_celestial_object outing_has_celestial_object_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outing_has_celestial_object
@@ -801,7 +944,8 @@ ALTER TABLE ONLY public.outing_has_celestial_object
 
 
 --
--- Name: outings outings_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3239 (class 2606 OID 19830)
+-- Name: outings outings_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outings
@@ -809,7 +953,8 @@ ALTER TABLE ONLY public.outings
 
 
 --
--- Name: seasons seasons_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3243 (class 2606 OID 19832)
+-- Name: seasons seasons_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.seasons
@@ -817,7 +962,8 @@ ALTER TABLE ONLY public.seasons
 
 
 --
--- Name: types types_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3247 (class 2606 OID 19834)
+-- Name: types types_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.types
@@ -825,7 +971,8 @@ ALTER TABLE ONLY public.types
 
 
 --
--- Name: administrators unique_administrator; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3223 (class 2606 OID 19836)
+-- Name: administrators unique_administrator; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.administrators
@@ -833,7 +980,8 @@ ALTER TABLE ONLY public.administrators
 
 
 --
--- Name: celestial_objects unique_celestial_object; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3227 (class 2606 OID 19838)
+-- Name: celestial_objects unique_celestial_object; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -841,7 +989,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: constellations unique_constellation; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3231 (class 2606 OID 19840)
+-- Name: constellations unique_constellation; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.constellations
@@ -849,7 +998,8 @@ ALTER TABLE ONLY public.constellations
 
 
 --
--- Name: observation_difficulties unique_observation_difficulty; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3235 (class 2606 OID 19842)
+-- Name: observation_difficulties unique_observation_difficulty; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.observation_difficulties
@@ -857,7 +1007,8 @@ ALTER TABLE ONLY public.observation_difficulties
 
 
 --
--- Name: outings unique_outing; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3241 (class 2606 OID 19844)
+-- Name: outings unique_outing; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outings
@@ -865,7 +1016,8 @@ ALTER TABLE ONLY public.outings
 
 
 --
--- Name: seasons unique_season; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3245 (class 2606 OID 19846)
+-- Name: seasons unique_season; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.seasons
@@ -873,7 +1025,8 @@ ALTER TABLE ONLY public.seasons
 
 
 --
--- Name: types unique_type; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3249 (class 2606 OID 19848)
+-- Name: types unique_type; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.types
@@ -881,7 +1034,8 @@ ALTER TABLE ONLY public.types
 
 
 --
--- Name: users unique_user; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3253 (class 2606 OID 19850)
+-- Name: users unique_user; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -889,7 +1043,8 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: user_has_outing user_has_outing_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3251 (class 2606 OID 19852)
+-- Name: user_has_outing user_has_outing_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_has_outing
@@ -897,7 +1052,8 @@ ALTER TABLE ONLY public.user_has_outing
 
 
 --
--- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3255 (class 2606 OID 19854)
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.users
@@ -905,7 +1061,8 @@ ALTER TABLE ONLY public.users
 
 
 --
--- Name: celestial_objects celestial_objects_constellation_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3256 (class 2606 OID 19855)
+-- Name: celestial_objects celestial_objects_constellation_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -913,7 +1070,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: celestial_objects celestial_objects_observation_difficulty_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3257 (class 2606 OID 19860)
+-- Name: celestial_objects celestial_objects_observation_difficulty_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -921,7 +1079,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: celestial_objects celestial_objects_season_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3258 (class 2606 OID 19865)
+-- Name: celestial_objects celestial_objects_season_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -929,7 +1088,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: celestial_objects celestial_objects_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3259 (class 2606 OID 19870)
+-- Name: celestial_objects celestial_objects_type_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.celestial_objects
@@ -937,7 +1097,8 @@ ALTER TABLE ONLY public.celestial_objects
 
 
 --
--- Name: outing_has_celestial_object outing_has_celestial_object_celestial_object_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3260 (class 2606 OID 19875)
+-- Name: outing_has_celestial_object outing_has_celestial_object_celestial_object_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outing_has_celestial_object
@@ -945,7 +1106,8 @@ ALTER TABLE ONLY public.outing_has_celestial_object
 
 
 --
--- Name: outing_has_celestial_object outing_has_celestial_object_outing_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3261 (class 2606 OID 19880)
+-- Name: outing_has_celestial_object outing_has_celestial_object_outing_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.outing_has_celestial_object
@@ -953,7 +1115,8 @@ ALTER TABLE ONLY public.outing_has_celestial_object
 
 
 --
--- Name: user_has_outing user_has_outing_outing_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3262 (class 2606 OID 19885)
+-- Name: user_has_outing user_has_outing_outing_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_has_outing
@@ -961,12 +1124,15 @@ ALTER TABLE ONLY public.user_has_outing
 
 
 --
--- Name: user_has_outing user_has_outing_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- TOC entry 3263 (class 2606 OID 19890)
+-- Name: user_has_outing user_has_outing_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.user_has_outing
     ADD CONSTRAINT user_has_outing_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id) NOT VALID;
 
+
+-- Completed on 2022-05-25 10:06:56
 
 --
 -- PostgreSQL database dump complete
