@@ -5,7 +5,7 @@
 -- Dumped from database version 14.2
 -- Dumped by pg_dump version 14.2
 
--- Started on 2022-05-25 10:06:56
+-- Started on 2022-05-25 10:43:45
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -1132,7 +1132,7 @@ ALTER TABLE ONLY public.user_has_outing
     ADD CONSTRAINT user_has_outing_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(id) NOT VALID;
 
 
--- Completed on 2022-05-25 10:06:56
+-- Completed on 2022-05-25 10:43:45
 
 --
 -- PostgreSQL database dump complete

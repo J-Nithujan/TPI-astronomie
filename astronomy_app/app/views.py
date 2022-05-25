@@ -3,7 +3,7 @@
 # Brief: File with all the URLs of the website
 # Version: 25.05.2022
 
-from flask import Flask, render_template, redirect, url_for, request, session, flash
+from flask import Flask, render_template, redirect, url_for, session
 
 from app.model.celestial_objects_mgmt import *
 from app.model.administrator_mgmt import *
