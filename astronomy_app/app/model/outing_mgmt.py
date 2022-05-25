@@ -66,10 +66,8 @@ def get_outing_list() -> list[Outings]:
             flash('Base de données vide', 'Erreur')
         else:
             for outing in outing_list:
-                outing.meeting_time = outing.meeting_time.strftime('%d.%m.%Y %H:%M')
+                outing.meeting_time = outing.meeting_time.strftime('%d-%m-%Y %H:%M')
                 outing.duration = outing.duration.strftime('%H:%M')
-                # outing.equipment.replace('\r\n', '\'<br>\'')
-                # outing.comment.replace('\r\n', '<br>')
 
         return outing_list
 
