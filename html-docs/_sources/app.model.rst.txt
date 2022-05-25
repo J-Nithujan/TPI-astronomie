@@ -1,0 +1,69 @@
+app.model package
+=================
+
+Submodules
+----------
+
+app.model.administrator\_mgmt module
+------------------------------------
+
+.. automodule:: app.model.administrator_mgmt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.celestial\_objects\_mgmt module
+-----------------------------------------
+
+.. automodule:: app.model.celestial_objects_mgmt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.form\_validators module
+---------------------------------
+
+.. automodule:: app.model.form_validators
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.forms module
+----------------------
+
+.. automodule:: app.model.forms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.models module
+-----------------------
+
+.. automodule:: app.model.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.outing\_mgmt module
+-----------------------------
+
+.. automodule:: app.model.outing_mgmt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+app.model.user\_mgmt module
+---------------------------
+
+.. automodule:: app.model.user_mgmt
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: app.model
+   :members:
+   :undoc-members:
+   :show-inheritance:
