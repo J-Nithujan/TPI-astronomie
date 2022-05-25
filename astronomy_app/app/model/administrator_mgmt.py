@@ -1,4 +1,7 @@
-# Version: 05.05.22
+# File: administrator_mgmt.py
+# Author: Nithujan Jegatheeswaran
+# Brief: This module cotains the functions used to manipulate the administrator table
+# Version: 25.05.22
 
 from hashlib import sha256
 
@@ -9,6 +12,12 @@ from app.model.forms import LoginForm
 
 
 def check_login(form: LoginForm) -> bool:
+    """
+    Checks that an admin with the email given in the form exists and that his/her password is correct
+
+    :param form: the form submitted by the website's user
+    :return: True if login is successfull, False otherwise
+    """
     encoded: bytes = form.password.data.encode()
     hashed = sha256(encoded).hexdigest()
     try:
@@ -29,6 +38,7 @@ def check_login(form: LoginForm) -> bool:
         return False
     except ProgrammingError:
         form.login.errors.append('Erreur: Structure de la base de données incomplète')
+        return False
     except Exception:
         form.login.errors.append('Erreur: problème avec la base de données')
-
+        return False

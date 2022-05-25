@@ -1,7 +1,7 @@
 # File: celestial_objects_mgmt.py
 # Author: Nithujan Jegatheeswaran
 # Brief: All the functions used to modify the table 'celestial_objects' of the database
-# Version: 16.05.2022
+# Version: 24.05.2022
 
 from flask import flash
 from sqlalchemy.exc import *
@@ -24,8 +24,11 @@ def get_celestial_objects() -> list[CelestialObjects]:
         return celestial_objects
 
     except OperationalError:
+        # This happens when there is no database
         flash('Base de données injoignable', 'Erreur')
     except ProgrammingError:
+        # This occurs when the queried table does not exist
         flash('Structure de la base de données incomplète', 'Erreur')
     except Exception:
+        # Catches all the unexpected exceptions
         flash('Erreur: problème avec la base de données')

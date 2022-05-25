@@ -1,4 +1,7 @@
-# Version: 05.05.22
+# File: models.py
+# Author: Nithujan Jegatheeswaran
+# Brief: A module containing all the class and table object mapped with the database
+# Version: 25.05.2022
 
 from flask_sqlalchemy import SQLAlchemy
 
@@ -35,7 +38,7 @@ class Administrators(db.Model):
 
 class Constellations(db.Model):
     """
-        This class represents the table ``constellations`` of the database
+    This class represents the table ``constellations`` of the database
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)
@@ -45,7 +48,7 @@ class Constellations(db.Model):
 
 class ObservationDifficulties(db.Model):
     """
-        This class represents the table ``observation_difficulties`` of the database
+    This class represents the table ``observation_difficulties`` of the database
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(15), nullable=False, unique=True)
@@ -56,7 +59,7 @@ class ObservationDifficulties(db.Model):
 
 class Seasons(db.Model):
     """
-        This class represents the table ``seasons`` of the database
+    This class represents the table ``seasons`` of the database
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(10), nullable=False, unique=True)
@@ -66,7 +69,7 @@ class Seasons(db.Model):
 
 class Types(db.Model):
     """
-        This class represents the table ``types`` of the database
+    This class represents the table ``types`` of the database
     """
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     name = db.Column(db.String(30), nullable=False, unique=True)

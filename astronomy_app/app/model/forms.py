@@ -1,4 +1,8 @@
-# Version: 05.05.22
+# File: forms.py
+# Author: Nithujan Jegatheeswaran
+# Brief: This module contains all the form used on the website
+# Version: 25.05.2022
+
 import datetime
 import re
 

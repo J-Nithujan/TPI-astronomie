@@ -1,4 +1,7 @@
-# Version 23.05.22
+# File: form_validators.py
+# Author: Nithujan Jegatheeswaran
+# Brief: Specific validator for the forms used on the website
+# Version: 22.05.2022
 
 import datetime
 
@@ -7,7 +10,7 @@ from wtforms import ValidationError
 
 class ValidTime(object):
     """
-    Validator used with a datetime format and a custom error message
+    Validator used with a datetime/time format and a custom error message
     """
 
     def __init__(self, message, empty_message, valid_format='%H:%M %d.%m.%Y'):

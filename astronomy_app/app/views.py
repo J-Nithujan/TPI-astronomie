@@ -1,7 +1,7 @@
 # File: views.py
 # Author: Nithujan Jegatheeswaran
 # Brief: File with all the URLs of the website
-# Version: 23.05.2022
+# Version: 25.05.2022
 
 from flask import Flask, render_template, redirect, url_for, request, session, flash
 
@@ -64,9 +64,9 @@ def logout():
 @app.route('/catalog/')
 def catalog():
     """
-    Displays the page with the Messier catalog objects
-    
-    :return: Renders the template catalog.html ....
+    Displays the page with the objects of the Messier catalog
+
+    :return: Renders the template catalog.html
     """
     celestial_objects = get_celestial_objects()
 
@@ -86,12 +86,12 @@ def new_outing():
     """
     form = NewOutingForm()
 
-    _celestial_objects = get_celestial_objects()
-    _choices: list = []
-    for obj in _celestial_objects:
-        _choices.append(obj.messier_number)
+    celestial_objects = get_celestial_objects()
+    choices: list = []
+    for obj in celestial_objects:
+        choices.append(obj.messier_number)
 
-    form.celestial_objects.choices = _choices
+    form.celestial_objects.choices = choices
 
     if form.validate_on_submit():
         if add_outing(form):

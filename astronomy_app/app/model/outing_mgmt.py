@@ -1,4 +1,8 @@
-# Version: 19.05.22
+# File: outing_mgmt.py
+# Author: Nithujan Jegatheeswaran
+# Brief: This module contains all the functions used by the website to query the outing table and the ones related to it
+# Version: 25.05.2022
+
 from datetime import datetime
 
 from flask import flash
@@ -9,7 +13,13 @@ from app.model.forms import NewOutingForm
 from app.model.models import db, Outings, CelestialObjects
 
 
-def add_outing(form: NewOutingForm):
+def add_outing(form: NewOutingForm) -> bool:
+    """
+    Adds an outing to the database and the entries of the junction table `outing_has_celestial_object`
+
+    :param form: A form containing all the data for an entry of the table outing`
+    :return: True if the operation was successful, False otherwise
+    """
     # Data conversion
     try:
         meeting_time: datetime = datetime.strptime(form.meeting_time.data, '%H:%M %d.%m.%Y')
@@ -30,16 +40,20 @@ def add_outing(form: NewOutingForm):
         return True
 
     except OperationalError:
+        # This happens when there is no database
         form.errors.append('Erreur: la transaction avec la base de données a échouée')
         return False
     except ProgrammingError:
+        # This occurs when the queried table does not exist
         form.errors.append('Erreur: la structure de la base de données est incomplète')
         return False
     except Exception:
+        # Catches all the unexpected exceptions
         form.errors.errors.append('Erreur: problème avec la base de données')
         return False
 
-def get_outing_list():
+
+def get_outing_list() -> list[Outings]:
     """
     Gets the complete list of all the existing outings
 
@@ -60,6 +74,11 @@ def get_outing_list():
         return outing_list
 
     except OperationalError:
+        # This happens when there is no database
         flash('Base de données injoignable', 'Erreur')
     except ProgrammingError:
+        # This occurs when the queried table does not exist
         flash('Structure de la base de données incomplète', 'Erreur')
+    except Exception:
+        # Catches all the unexpected exceptions
+        flash('Erreur: problème avec la base de données')
