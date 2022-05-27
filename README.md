@@ -41,4 +41,4 @@ In Windows command prompt:
 
 To change the PostgreSQL URI used by the web app, open the file /astronomy_app/config.py :
 
-![](.\img\db-credentials.png)
+![](/img/db-credentials.png)
