@@ -4,14 +4,12 @@
 # Version: 25.05.2022
 
 import datetime
-import re
 
 from flask_wtf import FlaskForm
-from wtforms import validators, EmailField, PasswordField, SubmitField, StringField, TextAreaField, SelectMultipleField, \
+from wtforms import EmailField, PasswordField, SubmitField, StringField, TextAreaField, SelectMultipleField, \
     IntegerField
-from wtforms.validators import length, optional, number_range, StopValidation, ValidationError, regexp
+from wtforms.validators import length, optional, number_range, regexp
 
-from app.model.celestial_objects_mgmt import get_celestial_objects
 from app.model.form_validators import valid_time
 
 

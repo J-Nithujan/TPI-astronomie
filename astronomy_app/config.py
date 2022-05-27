@@ -5,20 +5,20 @@
 
 import os
 import secrets
-
 import urllib.parse
 
 # Generate a random key for session
 SECRET_KEY = secrets.token_hex()
+SESSION_COOKIE_SECURE = True
 
 # Had to be set to 'True' or 'False' to suppress error message due to future disabling
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 # Uncomment if commented and give correct credentials for local use
 # ------------
-# Encode the password's character to avoid error with some characters, especially useful for '@'
+# Encode the character to avoid error with some characters, especially useful for '@'
 username = urllib.parse.quote('postgres')
-password = urllib.parse.quote("Pa$$w0rd")
+password = urllib.parse.quote("P@$$w0rd")
 SQLALCHEMY_DATABASE_URI = f'postgresql://{username}:{password}@localhost:5432/db_astronomy'
 
 # Database link for Heroku, uncomment before deploying

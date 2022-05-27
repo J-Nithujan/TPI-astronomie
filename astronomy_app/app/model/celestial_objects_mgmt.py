@@ -6,7 +6,7 @@
 from flask import flash
 from sqlalchemy.exc import *
 
-from app.model.models import db, CelestialObjects, Constellations, Types, ObservationDifficulties, Seasons
+from app.model.models import CelestialObjects
 
 
 def get_celestial_objects() -> list[CelestialObjects]:

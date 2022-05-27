@@ -7,7 +7,6 @@ from datetime import datetime
 
 from flask import flash
 from sqlalchemy.exc import *
-from sqlalchemy.sql import select
 
 from app.model.forms import NewOutingForm
 from app.model.models import db, Outings, CelestialObjects
