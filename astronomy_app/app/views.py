@@ -39,7 +39,6 @@ def login():
         if check_login(form):
             # Login success
             session['user'] = form.email.data
-            session.permanent = True
             flash('Login réussi', 'Info')
             return redirect(url_for('index'))
         else:
