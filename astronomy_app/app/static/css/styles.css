@@ -50,14 +50,19 @@ header, footer{
     color: #232CD9;
 }
 
-.form-control, select, option, input, button {
+.form-control, select, option, input {
     color: #D9C68F;
     background-color: #0D0D0D;
 }
 
-.btn {
+.card, .btn, .list-group-item {
     border: 1px solid #adb5bd ;
     color: #D9C68F;
+    background-color: #0D0D0D;
+}
+
+pre{
+    margin-bottom: auto;
 }
 
 .form-control:focus {

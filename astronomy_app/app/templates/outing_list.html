@@ -24,62 +24,140 @@
 
         {% include 'success_messages.html' %}
 
-        <div class="col-md-12 me-auto ms-auto mt-3 table-responsive">
-            <table id="outing_list" class="table table-dark table-hover table-sm">
-                <thead>
-                <tr>
-                    <th class="text-center">ID</th>
-                    <th class="text-center">Thème</th>
-                    <th class="text-center">Date et heure</th>
-                    <th class="text-center">Durée</th>
-                    <th class="text-center">Lieux de départ</th>
-                    <th class="text-center">Equipement</th>
-                    <th class="text-center">Places restantes</th>
-                    <th class="text-center">Commentaire</th>
-                    <th>Objets célestes concernés</th>
-                    <th class="text-center">S'inscrire</th>
-                </thead>
-                <tbody>
-                {% with messages = get_flashed_messages(with_categories=true) %}
-                    {% if messages %}
-                        {% for category, message in messages %}
-                            {% if category == 'Erreur' %}
-                                <td colspan="13" class="text-center text-danger fs-3">{{ category }}: {{ message }}</td>
-                            {% endif %}
-                        {% endfor %}
-                    {% endif %}
 
-                    {% if list %}
-                        {% for outing in list %}
-                            <tr>
-                                <td class="text-center align-middle">{{ outing.id }}</td>
-                                <td class="text-center align-middle">{{ outing.theme }}</td>
-                                <td class="text-center align-middle">{{ outing.meeting_time }}</td>
-                                <td class="text-center align-middle">{{ outing.duration }}</td>
-                                <td class="text-center align-middle">{{ outing.place }}</td>
-                                <td class="align-middle">
-                                    <pre>{{ outing.equipment }}</pre>
-                                </td>
-                                <td class="text-center align-middle">{{ outing.remaining_slots }}</td>
-                                <td class="align-middle">
-                                    <pre>{{ outing.comment }}</pre>
-                                </td>
-                                <td>
-                                    {% for object in outing.celestial_objects %}
-                                        {{ object.messier_number }}<br>
-                                    {% endfor %}
-                                </td>
-                                <td class="text-center align-middle">
-                                    <a href="{{ url_for('register_for_outing', outing_id=outing.id) }}">
-                                        <i class="fa-solid fa-right-to-bracket"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        {% endfor %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    {% if category == 'Erreur' %}
+                        <div class="col-md-8 me-auto ms-auto mt-3">
+                            <div class="card">
+                                <div class="card-header bg-dark">{{ category }}</div>
+                                <div class="card-body">
+                                    <div class="card-text">{{ message }}</div>
+                                </div>
+                            </div>
+                        </div>
                     {% endif %}
-                {% endwith %}
-                </tbody>
-            </table>
-        </div>
+                {% endfor %}
+            {% endif %}
+            <div class="col-md-6 me-auto ms-auto mt-3">
+                {% if list %}
+                    {% for outing in list %}
+                        <div class="card mt-5">
+                            <div class="card-header bg-dark">Sortie n° {{ outing.id }}</div>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ outing.theme }}</h5>
+                                <h6 class="card-subtitle text-muted">Date et heure: {{ outing.meeting_time }}</h6>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    Durée:
+                                    <br>
+                                    {{ outing.duration }}
+                                </li>
+                                <li class="list-group-item">
+                                    Lieu de départ:
+                                    <br>
+                                    {{ outing.place }}
+                                </li>
+                                <li class="list-group-item">
+                                    Equipements:
+                                    <br>
+                                    {% if outing.equipment %}
+                                        <pre>{{ outing.equipment }}</pre>
+                                    {% else %}
+                                        Aucun
+                                    {% endif %}
+                                </li>
+                                <li class="list-group-item">
+                                    Objets célestes concernés:
+                                    <br>
+                                    {% if outing.celestial_objects|length != 0 %}
+                                        {% for object in outing.celestial_objects %}
+                                            {{ object.messier_number }}<br>
+                                        {% endfor %}
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </li>
+                                <li class="list-group-item">
+                                    Commentaire:
+                                    <br>
+                                    {% if outing.comment %}
+                                        <pre>{{ outing.comment }}</pre>
+                                    {% else %}
+                                        -
+                                    {% endif %}
+                                </li>
+                                <li class="list-group-item">
+                                    Places :
+                                    <br>
+                                    {{ outing.remaining_slots }} / {{ outing.max_people }}
+                                </li>
+                            </ul>
+                            <div class="card-body text-center">
+                                <button class="btn">Inscription</button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endwith %}
+
+        {#            <table id="outing_list" class="table table-dark table-hover table-sm">#}
+        {#                <thead>#}
+        {#                <tr>#}
+        {#                    <th class="text-center">ID</th>#}
+        {#                    <th class="text-center">Thème</th>#}
+        {#                    <th class="text-center">Date et heure</th>#}
+        {#                    <th class="text-center">Durée</th>#}
+        {#                    <th class="text-center">Lieux de départ</th>#}
+        {#                    <th class="text-center">Equipement</th>#}
+        {#                    <th class="text-center">Places restantes</th>#}
+        {#                    <th class="text-center">Commentaire</th>#}
+        {#                    <th>Objets célestes concernés</th>#}
+        {#                    <th class="text-center">S'inscrire</th>#}
+        {#                </thead>#}
+        {#                <tbody>#}
+        {#                {% with messages = get_flashed_messages(with_categories=true) %}#}
+        {#                    {% if messages %}#}
+        {#                        {% for category, message in messages %}#}
+        {#                            {% if category == 'Erreur' %}#}
+        {#                                <td colspan="13" class="text-center text-danger fs-3">{{ category }}: {{ message }}</td>#}
+        {#                            {% endif %}#}
+        {#                        {% endfor %}#}
+        {#                    {% endif %}#}
+        {##}
+        {#                    {% if list %}#}
+        {#                        {% for outing in list %}#}
+        {#                            <tr>#}
+        {#                                <td class="text-center align-middle">{{ outing.id }}</td>#}
+        {#                                <td class="text-center align-middle">{{ outing.theme }}</td>#}
+        {#                                <td class="text-center align-middle">{{ outing.meeting_time }}</td>#}
+        {#                                <td class="text-center align-middle">{{ outing.duration }}</td>#}
+        {#                                <td class="text-center align-middle">{{ outing.place }}</td>#}
+        {#                                <td class="align-middle">#}
+        {#                                    <pre>{{ outing.equipment }}</pre>#}
+        {#                                </td>#}
+        {#                                <td class="text-center align-middle">{{ outing.remaining_slots }}</td>#}
+        {#                                <td class="align-middle">#}
+        {#                                    <pre>{{ outing.comment }}</pre>#}
+        {#                                </td>#}
+        {#                                <td>#}
+        {#                                    {% for object in outing.celestial_objects %}#}
+        {#                                        {{ object.messier_number }}<br>#}
+        {#                                    {% endfor %}#}
+        {#                                </td>#}
+        {#                                <td class="text-center align-middle">#}
+        {#                                    <a href="{{ url_for('register_for_outing', outing_id=outing.id) }}">#}
+        {#                                        <i class="fa-solid fa-right-to-bracket"></i>#}
+        {#                                    </a>#}
+        {#                                </td>#}
+        {#                            </tr>#}
+        {#                        {% endfor %}#}
+        {#                    {% endif %}#}
+        {#                {% endwith %}#}
+        {#                </tbody>#}
+        {#            </table>#}
     </div>
 {% endblock content %}
